@@ -41,40 +41,40 @@ description: "Task list template for feature implementation"
   ============================================================================
 -->
 
+
 ## Phase 1: Setup (Shared Infrastructure)
 
-**Purpose**: Project initialization and basic structure
+**Purpose**: Project initialization and basic structure for static dashboard web app
 
-- [ ] T001 Create project structure per implementation plan
-- [ ] T002 Initialize [language] project with [framework] dependencies
-- [ ] T003 [P] Configure linting and formatting tools
+- [ ] T001 Create project structure for static web app (src/, public/, etc.)
+- [ ] T002 Initialize project with static site generator (e.g., React+Vite, VuePress)
+- [ ] T003 [P] Configure linting, formatting, and static asset handling
 
 ---
 
+
 ## Phase 2: Foundational (Blocking Prerequisites)
 
-**Purpose**: Core infrastructure that MUST be complete before ANY user story can be implemented
+**Purpose**: Core infrastructure for JSON-driven, static dashboard rendering
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-Examples of foundational tasks (adjust based on your project):
-
-- [ ] T004 Setup database schema and migrations framework
-- [ ] T005 [P] Implement authentication/authorization framework
-- [ ] T006 [P] Setup API routing and middleware structure
-- [ ] T007 Create base models/entities that all stories depend on
-- [ ] T008 Configure error handling and logging infrastructure
-- [ ] T009 Setup environment configuration management
+- [ ] T004 Implement JSON schema for dashboard layouts and widgets
+- [ ] T005 [P] Create base widget components (chart, table, text, etc.)
+- [ ] T006 [P] Implement JSON loader and validator
+- [ ] T007 Add static export/build configuration
+- [ ] T008 Configure automated test framework for widgets/layouts
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
 ---
 
+
 ## Phase 3: User Story 1 - [Title] (Priority: P1) 🎯 MVP
 
-**Goal**: [Brief description of what this story delivers]
+**Goal**: Deliver a working dashboard page rendered from a JSON config using at least one widget type
 
-**Independent Test**: [How to verify this story works on its own]
+**Independent Test**: Provide a sample JSON config and verify correct rendering in browser
 
 ### Tests for User Story 1 (OPTIONAL - only if tests requested) ⚠️
 

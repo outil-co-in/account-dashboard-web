@@ -31,7 +31,11 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- All dashboard layouts and widgets MUST be defined in JSON files (no hardcoded UI).
+- All widgets MUST be reusable and accept only JSON-defined props.
+- App MUST be statically hostable (no server runtime dependencies).
+- All layouts/widgets MUST have automated tests for valid/invalid JSON.
+- Simplicity: No unnecessary complexity; new widgets/layouts MUST be documented.
 
 ## Project Structure
 

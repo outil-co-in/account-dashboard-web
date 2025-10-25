@@ -1,50 +1,68 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Account Dashboard Web Constitution
+
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. JSON-Driven Layouts
+All dashboard layouts and widget configurations MUST be defined in JSON files. No hardcoded UI layouts are permitted. This ensures flexibility, portability, and enables non-developers to modify dashboards.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Widget Rendering
+The app MUST support rendering a set of reusable widgets (charts, tables, text, etc.) based on the JSON configuration. Widgets MUST be independently testable and accept only JSON-defined props.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Static Hosting & Offline Access
+The app MUST be deployable as a static site (no server-side code required at runtime). All assets, configs, and data required for rendering MUST be available at build or load time. The app MUST support offline access for all dashboard features, using browser storage and caching.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Testability
+All layouts and widgets MUST have automated tests verifying correct rendering for valid and invalid JSON configurations. Test coverage MUST include edge cases and error handling for malformed configs.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Simplicity & Maintainability
+The codebase MUST avoid unnecessary complexity. Prefer declarative, composable patterns. All features MUST be documented and easy to extend with new widgets or layouts.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Additional Constraints
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+- Technology stack MUST be HTML5, JavaScript, and CSS3. All client logic MUST run in the browser.
+- Local data storage MUST use SQLite (via WebAssembly or browser-supported SQLite solution) for dashboard state and widget data.
+- The app MUST support cloud storage integration for dashboard configs and user data (e.g., via REST API or cloud file storage).
+- Caching and eviction policies MUST be implemented for dashboard data and widgets, with clear rules for when data is refreshed or removed.
+- Offline access is REQUIRED: all dashboard features MUST work without network connectivity, using cached or local data.
+- No runtime secrets or server dependencies allowed.
+- All configuration files MUST be version-controlled.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+
+## Development Workflow
+
+- All changes MUST be peer-reviewed.
+- Automated tests MUST pass before merge.
+- New widgets or layouts MUST include documentation and example JSON configs.
+
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+- This constitution supersedes all other project practices.
+- Amendments require documentation, approval by project maintainers, and a migration plan if breaking changes are introduced.
+- All PRs and reviews MUST verify compliance with the constitution.
+- Versioning follows semantic versioning: MAJOR for breaking/removal, MINOR for new principles/sections, PATCH for clarifications.
+- Compliance reviews are required at each release.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+<!--
+Sync Impact Report
+Version change: 0.0.0 → 1.0.0
+List of modified principles: N/A (initial version)
+Added sections: All (initial constitution)
+Removed sections: None
+Templates requiring updates: plan-template.md ✅, spec-template.md ✅, tasks-template.md ✅
+Follow-up TODOs: TODO(RATIFICATION_DATE): Set original adoption date
+-->
+
+<!--
+Sync Impact Report
+Version change: 1.0.0 → 1.1.0
+List of modified principles: III. Static Hosting → III. Static Hosting & Offline Access
+Added sections: Technology stack, SQLite, cloud storage, caching/eviction, offline access
+Removed sections: None
+Templates requiring updates: plan-template.md ⚠, spec-template.md ⚠, tasks-template.md ⚠
+Follow-up TODOs: TODO(RATIFICATION_DATE): Set original adoption date
+-->
+
+**Version**: 1.1.0 | **Ratified**: TODO(RATIFICATION_DATE): Set original adoption date | **Last Amended**: 2025-10-25
