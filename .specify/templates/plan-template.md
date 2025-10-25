@@ -17,25 +17,27 @@
   the iteration process.
 -->
 
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [single/web/mobile - determines source structure]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
+**Language/Version**: HTML5, JavaScript (ES6+), CSS3  
+**Primary Dependencies**: SQLite (browser-based, e.g., sql.js), Service Workers, cloud storage API (REST or similar)  
+**Storage**: SQLite (browser), cloud storage for configs/data  
+**Testing**: [e.g., Jest, Mocha, Cypress]  
+**Target Platform**: Modern browsers (desktop/mobile), offline-capable  
+**Project Type**: Static web app  
+**Performance Goals**: Fast load, responsive UI, offline access, efficient caching/eviction  
+**Constraints**: No server runtime, all features offline-capable, caching/eviction for local data, cloud sync  
 **Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
 
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-- All dashboard layouts and widgets MUST be defined in JSON files (no hardcoded UI).
-- All widgets MUST be reusable and accept only JSON-defined props.
-- App MUST be statically hostable (no server runtime dependencies).
-- All layouts/widgets MUST have automated tests for valid/invalid JSON.
-- Simplicity: No unnecessary complexity; new widgets/layouts MUST be documented.
++- All dashboard layouts and widgets MUST be defined in JSON files (no hardcoded UI).
++- All widgets MUST be reusable and accept only JSON-defined props.
++- App MUST be statically hostable (no server runtime dependencies).
++- App MUST use HTML5, JavaScript, CSS3, and browser-based SQLite for local data.
++- App MUST support cloud storage for configs/data, and implement caching/eviction for local/offline use.
++- All layouts/widgets MUST have automated tests for valid/invalid JSON.
++- Simplicity: No unnecessary complexity; new widgets/layouts MUST be documented.
 
 ## Project Structure
 

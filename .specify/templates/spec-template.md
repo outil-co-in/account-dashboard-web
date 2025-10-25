@@ -83,8 +83,12 @@
 - **FR-001**: System MUST render dashboard layouts and widgets based on JSON configuration files.
 - **FR-002**: Widgets MUST be reusable and accept only JSON-defined props.
 - **FR-003**: App MUST be deployable as a static site (no server runtime dependencies).
-- **FR-004**: All layouts and widgets MUST have automated tests for valid and invalid JSON configs.
-- **FR-005**: New widgets/layouts MUST be documented and include example JSON configs.
+- **FR-004**: App MUST use HTML5, JavaScript, CSS3, and browser-based SQLite for local data storage.
+- **FR-005**: App MUST support cloud storage for dashboard configs and user data.
+- **FR-006**: App MUST implement caching and eviction for dashboard data and widgets.
+- **FR-007**: All features MUST work offline using cached/local data.
+- **FR-008**: All layouts and widgets MUST have automated tests for valid and invalid JSON configs.
+- **FR-009**: New widgets/layouts MUST be documented and include example JSON configs.
 
 ### Key Entities *(include if feature involves data)*
 
